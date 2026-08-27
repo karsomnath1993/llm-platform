@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+httpx
+pydantic-settings
+prometheus-client
+pytest
+pytest-asyncio
+redis
