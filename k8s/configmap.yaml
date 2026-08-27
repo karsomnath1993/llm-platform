@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: llm-platform-config
+  namespace: llm-platform
+data:
+  MODEL_NAME: "qwen3:0.6b"
+  OLLAMA_URL: "http://ollama:11434"
+  REDIS_URL: "redis://redis:6379"
