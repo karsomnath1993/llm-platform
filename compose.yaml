@@ -58,6 +58,26 @@ services:
       - redis_data:/data
 
 
+  prometheus:
+    image: prom/prometheus
+    profiles:
+      - monitoring
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus-compose.yml:/etc/prometheus/prometheus.yml
+
+
+  grafana:
+    image: grafana/grafana
+    profiles:
+      - monitoring
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+
+
 volumes:
   ollama_data:
   redis_data:
